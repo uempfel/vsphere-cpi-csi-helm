@@ -138,4 +138,4 @@ questions:
           - MEDIUM
           - LARGE
         required: true
-        group: "NSX-T"
+        group: "NSX-T Test"
