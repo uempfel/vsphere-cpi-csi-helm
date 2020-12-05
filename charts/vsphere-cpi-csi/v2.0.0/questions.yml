@@ -130,8 +130,12 @@ questions:
     subquestions:
       - variable: nsxt.loadbalancersize
         label: Load Balacer Size
-        description: Values are `SMALL`, `MEDIUM` or `LARGE`
-        default: "SMALL"
-        type: string
+        description: Values are SMALL, MEDIUM or LARGE
+        default: SMALL
+        type: enum
+        options:
+          - SMALL
+          - MEDIUM
+          - LARGE
         required: true
         group: "NSX-T"
