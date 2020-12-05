@@ -126,4 +126,12 @@ questions:
     label: Enable NSX-T Alpha Feature
     type: boolean
     show_subquestion_if: true
-    group: "nsxt"
+    group: "NSX-T"
+    subquestions:
+      - variable: nsxt.loadbalancersize
+        label: Load Balacer Size
+        description: Values are `SMALL`, `MEDIUM` or `LARGE`
+        default: "SMALL"
+        type: string
+        required: true
+        group: "NSX-T"
