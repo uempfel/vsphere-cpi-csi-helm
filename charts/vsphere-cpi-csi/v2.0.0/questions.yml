@@ -121,3 +121,9 @@ questions:
         type: string
         required: false
         group: "storageClass"
+  - variable: enableNsxt
+    default: false
+    label: Enable NSX-T Alpha Feature
+    type: boolean
+    show_subquestion_if: true
+    group: "nsxt"
