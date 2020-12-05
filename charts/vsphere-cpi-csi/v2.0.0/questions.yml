@@ -128,7 +128,46 @@ questions:
     show_subquestion_if: true
     group: "NSX-T"
     subquestions:
-      - variable: nsxt.loadbalancersize
+      - variable: nsxt.user
+        label: NSX-T Username
+        description: "Name of the NSX-T Account"
+        type: string
+        required: true
+        group: "NSX-T"
+      - variable: nsxt.password
+        label: NSX-T Password
+        description: "Password for the specified NSX-T User"
+        type: string
+        required: true
+        group: "NSX-T"
+      - variable: nsxt.host
+        label: NSX-T Host
+        description: "Hostname or IP of the NSX-T Manager"
+        type: string
+        required: true
+        group: "NSX-T"
+      - variable: nsxt.insecureFlag
+        label: NSX-T allow insecure
+        description: "Set to true to skip certificate vaildation"
+        default: false
+        type: boolean
+        group: "NSX-T"
+        questions:
+        - variable: nsxt.test
+          label: NSX-T test
+          description: "Test"
+          type: string
+          required: true
+          group: "NSX-T sub"
+
+
+      - variable: loadBalancer.ipPoolName
+        label: Name of the Load Balancer IP-Pool
+        description: The IP IP-Pool with the given name must already exist. Mutually exlusive with ipPoolID
+        type: string
+        required: false
+        group: "NSX-T"
+      - variable: loadBalancer.
         label: Load Balacer Size
         description: Values are SMALL, MEDIUM or LARGE
         default: SMALL
@@ -138,4 +177,4 @@ questions:
           - MEDIUM
           - LARGE
         required: true
-        group: "NSX-T Test"
+        group: "NSX-T"
