@@ -25,7 +25,7 @@ storageclass:
 enableNsxt: false
 # nsxt:
 #   user: admin
-#   password": secret
+#   password: secret
 #   host: nsxt-server
 #   insecureFlag: false
 
