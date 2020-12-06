@@ -128,6 +128,12 @@ questions:
     show_subquestion_if: true
     group: "NSX-T"
     subquestions:
+      - variable: nsxt.host
+        label: NSX-T Host
+        description: "Hostname or IP of the NSX-T Manager"
+        type: string
+        required: true
+        group: "NSX-T"
       - variable: nsxt.user
         label: NSX-T Username
         description: "Name of the NSX-T Account"
@@ -137,37 +143,42 @@ questions:
       - variable: nsxt.password
         label: NSX-T Password
         description: "Password for the specified NSX-T User"
-        type: string
-        required: true
-        group: "NSX-T"
-      - variable: nsxt.host
-        label: NSX-T Host
-        description: "Hostname or IP of the NSX-T Manager"
-        type: string
+        type: password
         required: true
         group: "NSX-T"
       - variable: nsxt.insecureFlag
         label: NSX-T allow insecure
-        description: "Set to true to skip certificate vaildation"
+        description: "Check to skip certificate vaildation"
         default: false
         type: boolean
         group: "NSX-T"
-        questions:
-        - variable: nsxt.test
-          label: NSX-T test
-          description: "Test"
-          type: string
-          required: true
-          group: "NSX-T sub"
 
 
       - variable: loadBalancer.ipPoolName
         label: Name of the Load Balancer IP-Pool
-        description: The IP IP-Pool with the given name must already exist. Mutually exlusive with ipPoolID
+        description: Name of the IP IP-Pool to use (for managed mode). The IP-Pool must already exist. Mutually exlusive with ipPoolID.
         type: string
         required: false
         group: "NSX-T"
-      - variable: loadBalancer.
+      - variable: loadBalancer.ipPoolID
+        label: ID of the Load Balancer IP-Pool
+        description: ID of the IP IP-Pool to use (for managed mode). The IP-Pool must already exist. Mutually exlusive with ipPoolName.
+        type: string
+        required: false
+        group: "NSX-T"
+      - variable: loadBalancer.tier1GatewayPath
+        label: Policy path for the tier1 gateway
+        description: "If the Load Balancer Service should be managed by the controller (managed mode), the tier1GatewayPath must be set (lbServiceId must not be set in this case)"
+        type: string
+        required: false
+        group: "NSX-T"
+      - variable: loadBalancer.lbServiceId
+        label: ID of the Load Balancer Service
+        description: ID of the Load Balancer Service (for unmanaged mode). The Service must already exist. Mutually exlusive with ipPoolName/ipPoolID.
+        type: string
+        required: false
+        group: "NSX-T"
+      - variable: loadBalancer.size
         label: Load Balacer Size
         description: Values are SMALL, MEDIUM or LARGE
         default: SMALL
@@ -178,3 +189,23 @@ questions:
           - LARGE
         required: true
         group: "NSX-T"
+      - variable: loadBalancer.tcpAppProfileName
+        label: TCP App Profile Name
+        description: Name of application profile used for TCP connections
+        type: string
+        default: "default-tcp-lb-app-profile"
+        required: true
+        group: "NSX-T"
+      - variable: loadBalancer.udpAppProfileName
+        label: UDP App Profile Name
+        description: Name of application profile used for UDP connections
+        type: string
+        default: "default-udp-lb-app-profile"
+        required: true
+        group: "NSX-T"
+      - variable: loadBalancer.tags
+        label: Tags
+        description: List of Key Value pairs
+        type: multiline
+        group: "NSX-T"
+
