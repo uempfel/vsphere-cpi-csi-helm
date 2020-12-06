@@ -9,11 +9,11 @@ images:
   nodeDriverRegistrar: "quay.io/k8scsi/csi-node-driver-registrar:v1.2.0"
 
 vcenter:
-  # host: vcenter.example.com
+  host: vcenter.example.com
   insecurehost: true
-  # username: admin 
-  # password: root
-  # datacenter: DC1
+  username: admin 
+  password: root
+  datacenter: DC1
 
 storageclass:
   name: vsphere-csi
@@ -21,3 +21,17 @@ storageclass:
   fstype: ext4
   # storagepolicyname: my-storage-policy
   # datastoreurl: ds:///vmfs/volumes/vsan:528c27f173c2088e-2126e911985dc3aa/
+
+enableNsxt: false
+# nsxt:
+#   user: admin
+#   password": secret
+#   host: nsxt-server
+#   insecureFlag: false
+
+# loadBalancer:
+#   ipPoolName: pool1
+#   size: SMALL
+#   tier1GatewayPath: tier1-path
+#   tcpAppProfileName: default-tcp-lb-app-profile
+#   udpAppProfileName: default-udp-lb-app-profile
