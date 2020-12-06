@@ -160,24 +160,24 @@ questions:
         type: string
         required: false
         group: "NSX-T"
-      - variable: loadBalancer.ipPoolID
-        label: ID of the Load Balancer IP-Pool
-        description: ID of the IP IP-Pool to use (for managed mode). The IP-Pool must already exist. Mutually exlusive with ipPoolName.
-        type: string
-        required: false
-        group: "NSX-T"
+      # - variable: loadBalancer.ipPoolID
+      #   label: ID of the Load Balancer IP-Pool
+      #   description: ID of the IP IP-Pool to use (for managed mode). The IP-Pool must already exist. Mutually exlusive with ipPoolName.
+      #   type: string
+      #   required: false
+      #   group: "NSX-T"
       - variable: loadBalancer.tier1GatewayPath
         label: Policy path for the tier1 gateway
         description: "If the Load Balancer Service should be managed by the controller (managed mode), the tier1GatewayPath must be set (lbServiceId must not be set in this case)"
         type: string
         required: false
         group: "NSX-T"
-      - variable: loadBalancer.lbServiceId
-        label: ID of the Load Balancer Service
-        description: ID of the Load Balancer Service (for unmanaged mode). The Service must already exist. Mutually exlusive with ipPoolName/ipPoolID.
-        type: string
-        required: false
-        group: "NSX-T"
+      # - variable: loadBalancer.lbServiceId
+      #   label: ID of the Load Balancer Service
+      #   description: ID of the Load Balancer Service (for unmanaged mode). The Service must already exist. Mutually exlusive with ipPoolName/ipPoolID.
+      #   type: string
+      #   required: false
+      #   group: "NSX-T"
       - variable: loadBalancer.size
         label: Load Balacer Size
         description: Values are SMALL, MEDIUM or LARGE
@@ -208,4 +208,6 @@ questions:
         description: List of Key Value pairs
         type: multiline
         group: "NSX-T"
+        required: false
+
 
