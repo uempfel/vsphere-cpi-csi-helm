@@ -52,6 +52,11 @@ spec:
           resources:
             requests:
               cpu: 200m
+{{- if .Values.enableNsxt }}
+          env:
+            - name: ENABLE_ALPHA_NSXT_LB
+              value: "true"
+{{- end }}
       hostNetwork: true
       volumes:
       - name: vsphere-config-volume

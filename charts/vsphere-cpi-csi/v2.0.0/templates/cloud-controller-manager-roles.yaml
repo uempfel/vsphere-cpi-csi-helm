@@ -40,6 +40,11 @@ items:
     - services/status
     verbs:
     - patch
+{{- if .Values.enableNsxt }}
+    - list
+    - update
+    - watch
+{{- end }}
   - apiGroups:
     - ""
     resources:
