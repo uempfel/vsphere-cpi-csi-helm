@@ -1,5 +1,5 @@
 images:
-  vsphereCloudControllerManager: "gcr.io/cloud-provider-vsphere/cpi/release/manager:v1.1.0"
+  vsphereCloudControllerManager: "gcr.io/cloud-provider-vsphere/cpi/release/manager:v1.2.1"
   csiAttacher: "quay.io/k8scsi/csi-attacher:v2.0.0"
   csiDriver: "gcr.io/cloud-provider-vsphere/csi/release/driver:v2.0.0"
   livenessProbe: "quay.io/k8scsi/livenessprobe:v1.1.0"
